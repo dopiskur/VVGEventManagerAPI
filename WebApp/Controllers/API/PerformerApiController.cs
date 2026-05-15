@@ -1,4 +1,4 @@
-using eventLib.Dal;
+using eventLib.Dal.Data;
 using eventLib.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;

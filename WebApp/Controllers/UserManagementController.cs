@@ -1,5 +1,4 @@
-﻿using eventLib.Dal;
-using eventLib.Models;
+﻿using eventLib.Models;
 using eventLib.Security;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
@@ -8,6 +7,7 @@ using System.Security.Claims;
 using WebApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using WebApp.Helpers;
+using eventLib.Dal.API;
 
 namespace WebApp.Controllers
 {

@@ -1,6 +1,6 @@
 ﻿using eventLib.Models;
 
-namespace eventLib.Dal
+namespace eventLib.Dal.Data
 {
     public interface IRepository
     {

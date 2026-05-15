@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 
-namespace eventLib.Dal
+namespace eventLib.Dal.API
 {
     public class ApiRepository : IApi
     {

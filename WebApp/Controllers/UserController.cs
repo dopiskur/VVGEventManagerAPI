@@ -5,9 +5,9 @@ using System.Security.Claims;
 using WebApp.ViewModels;
 using eventLib.Models;
 using eventLib.Security;
-using eventLib.Dal;
 using WebApp.Helpers;
 using Microsoft.Extensions.Hosting;
+using eventLib.Dal.API;
 
 namespace exercise_13.Controllers
 {

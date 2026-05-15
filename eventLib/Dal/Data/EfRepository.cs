@@ -2,7 +2,7 @@ using eventLib.Models;
 using eventLib.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace eventLib.Dal
+namespace eventLib.Dal.Data
 {
     public class EfRepository : IRepository
     {
