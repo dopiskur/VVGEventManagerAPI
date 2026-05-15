@@ -1,0 +1,74 @@
+﻿@model WebApp.ViewModels.EventVM
+
+@{
+    ViewData["Title"] = "Create";
+    
+}
+
+<h1>Create event</h1>
+@{
+    if (ViewBag.Message != null)
+    {
+        <div>
+            @ViewBag.Message
+        </div>
+    }
+}
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Event.EventName" class="control-label"></label>
+                <input asp-for="Event.EventName" class="form-control" />
+                <span asp-validation-for="Event.EventName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Date" class="control-label"></label>
+                <input asp-for="Event.Date" class="form-control" />
+                <span asp-validation-for="Event.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.Description" class="control-label"></label>
+                <input asp-for="Event.Description" class="form-control" />
+                <span asp-validation-for="Event.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Event.EventName" class="control-label"></label>
+                @if (Model.EventTypes != null && Model.EventTypes.Any())
+                {
+                    @Html.DropDownListFor(m => m.Event.eventTypeID,
+                         new SelectList(Model.EventTypes, "IDEventType", "EventTypeName", Model.Event?.eventTypeID),
+                         new { @class = "form-control" })
+                }
+                else
+                {
+                    <select class="form-control" disabled>
+                        <option>No categories available</option>
+                    </select>
+                }
+            </div>
+            <br/>
+            <div>
+                <label for="file">Select Image:</label>
+                <input type="file" id="imageFile" name="imageFile" required/>
+            </div>
+            <br/>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-primary mt-3">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
